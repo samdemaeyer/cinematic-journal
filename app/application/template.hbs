@@ -1,0 +1,20 @@
+<BsNavbar 
+  @type={{type}} 
+  @backgroundColor={{type}} 
+  @collapsed={{collapsed}} 
+  @onCollapse={{action (mut collapsed) true}}
+  @class="mb-4" as |navbar|>
+  <div class="navbar-header">
+    {{#link-to "index" class="navbar-brand"}}The Cinematic Journal{{/link-to}}
+  </div>
+  <navbar.toggle />
+  <navbar.content>
+    <navbar.nav class="ml-auto" as |nav|>
+      <nav.item>{{#nav.link-to "article.index"}}Articles{{/nav.link-to}}</nav.item>
+    </navbar.nav>
+  </navbar.content>
+</BsNavbar>
+
+<div class="container pt-4">
+  {{outlet}}
+</div>
